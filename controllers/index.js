@@ -7,7 +7,7 @@ var config = require('config');
 var Configs = require('../models/configs');
 
 exports.welcome = function(req, res) {
-    Configs.find({ name: 'projectConfigs' }, ' version developmentStatus dataObjects updated_at', function(err, docs) {
+    Configs.find({ name: 'projectConfigs' }, ' version developmentStatus dataObjects author updated_at', function(err, docs) {
         if (docs.length != 0) {
             res.status(200).send(docs);
         }
